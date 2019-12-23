@@ -4,12 +4,17 @@ config on app/config/app.js
 
 where you may set a 
 
-   - db host, port, username, password, database, sock
-   - appPort server port
-   - saltRounds user password salt Number,
-   - jwtString solt of from JWT
-   - jwtToken expires time and
-   - uploadsFolder
+    - db host, 
+        port, 
+        username, 
+        password, 
+        database, 
+        sock
+    - appPort server port
+    - saltRounds user password salt Number,
+    - jwtString solt of from JWT
+    - jwtToken expires time and
+    - uploadsFolder
 
 #####PLEASE REMEMBER add mysql db configuration in path ./app/config/app.js file 
 install node dependencies

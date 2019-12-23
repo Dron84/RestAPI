@@ -26,13 +26,7 @@ app.use((req, res, next) => {
     next();
 });
 const authMiddelware = require('./app/middleware/authHeaders');
-const con = mysql.createConnection({
-    host: config.db.host,
-    user: config.db.username,
-    password: config.db.password,
-    database: config.db.database,
-    socketPath: config.db.sock
-});
+
 
 const reg_tel = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
 const reg_email = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;

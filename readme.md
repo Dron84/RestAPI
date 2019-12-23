@@ -10,3 +10,32 @@ where you may set a
    - jwtString solt of from JWT
    - jwtToken expires time and
    - uploadsFolder
+
+#####PLEASE REMEMBER add mysql db configuration in path ./app/config/app.js file 
+install node dependencies
+
+    -npm i
+
+To start the app use this command
+
+    -npm start  
+    or
+    -mpm run start
+
+ by default server start in 3333 port
+ 
+ routes you will can use
+ 
+
+    -/signin
+    -/signin/new_token
+    -/logout
+    -/signup
+    -/info
+    -/file/upload
+    -/file/list/
+    -/file/:id 
+    -/file/delete/:id 
+    -/file/download/:id 
+    -/file/update/:id 
+    -/latency

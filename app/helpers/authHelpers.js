@@ -8,31 +8,32 @@ const {findTokenByUserId,deleteTokenByUserId,insertToken} = require('../controll
 const genAccessToken = (userId)=>{
     const payload = {
         userId,
-        type: jwtToken.access.type
+        type: jwtToken.access.type //add type of token
     }
-    const options = {expiresIn: jwtToken.access.expiresIn}
+    const options = {expiresIn: jwtToken.access.expiresIn} // add option to jwt
     return jwt.sign(payload,jwtString,options)
 }
 
 const genRefreshToken = ()=>{
     const payload = {
-        id: uniqid(),
-        type: jwtToken.refresh.type
+        id: uniqid(), // add unique id to refresh token from finding in DB
+        type: jwtToken.refresh.type //add type of token
     }
-    const options = {expiresIn: jwtToken.refresh.expiresIn}
+    const options = {expiresIn: jwtToken.refresh.expiresIn} // add option to jwt
     return jwt.sign(payload,jwtString,options)
 }
 
 const refreshDB = async (tokenId,userId)=>{
-    const token = await findTokenByUserId(userId)
+    const token = await findTokenByUserId(userId) //find token in db by user id
     // console.log('tokenId',tokenId)
-    if(token==undefined){
-        const insertedToken = await insertToken(tokenId,userId)
+    if(token==undefined){ ///checking
+        const insertedToken = await insertToken(tokenId,userId) // insert token if not find
         return insertedToken
     }else{
-        const deleteToken = await deleteTokenByUserId(userId)
+        // refreshing the token
+        const deleteToken = await deleteTokenByUserId(userId) //delete in db by user id
         if(deleteToken){
-            const insertedToken = await insertToken(tokenId,userId)
+            const insertedToken = await insertToken(tokenId,userId) //insert token
             return insertedToken
         }
     }

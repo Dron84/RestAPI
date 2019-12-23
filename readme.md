@@ -2,7 +2,6 @@
 
 All logic in index.js file
 
-All config info in app/config/app.js
 
 Controller DB in app/controllers/db.js
 
@@ -10,6 +9,7 @@ Generation token in app/helpers/authHelpers.js
 
 Token verify and refresh in app/middelware/authHeaders.js
 
+All config info in app/config/app.js
 
 where you may set a 
 
